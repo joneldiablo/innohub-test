@@ -1,0 +1,26 @@
+{
+  "name": "innohub-test",
+  "version": "1.0.0",
+  "description": "Prueba de desarrollo para innohub",
+  "main": "lib/InnohubTest.js",
+  "author": "jonathan diego rodriguez rdz (jon.eldiablo.88@gmail.com)",
+  "scripts": {
+    "init": "npm i && npm run build && npm run doc",
+    "start": "node main.js",
+    "build": "babel --source-maps -d lib src",
+    "test": "nodemon --ignore output --exec babel-node test -- --source-maps",
+    "doc": "jsdoc ./src -d documentation -c .jsdoc -r"
+  },
+  "bin": {
+    "innohub-test": "./bin.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.5.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "nodemon": "^1.18.4",
+    "jsdoc": "^3.5.5"
+  }
+}
