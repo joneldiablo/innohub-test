@@ -69,6 +69,10 @@ const main = () => {
   console.log('output:', outputPlus);
   console.log('done:', outputPlus === 15);
   console.log('-----------------');
+
+  console.log('=========');
+  console.log('execute api rest');
+  innohubTest.apiRest();
 }
 
 main();

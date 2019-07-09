@@ -1,0 +1,300 @@
+{
+  "definitions": {
+    "address": {
+      "type": "object",
+      "required": [
+        "lineAddress",
+        "city",
+        "state",
+        "country"
+      ],
+      "properties": {
+        "lineAddress": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/country"
+        }
+      }
+    },
+    "type": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "bundle": {
+          "type": "string"
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updateDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "projectType": {
+          "$ref": "#/definitions/type"
+        },
+        "review": {
+          "$ref": "#/definitions/review"
+        },
+        "users": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "$ref": "#/definitions/user"
+                },
+                "ownershipType": {
+                  "$ref": "#/definitions/type"
+                }
+              }
+            }
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/definitions/tag"
+            }
+          ]
+        },
+        "tasks": {
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/definitions/task"
+            }
+          ]
+        }
+      }
+    },
+    "session": {
+      "type": "object",
+      "required": [
+        "type",
+        "expiration"
+      ],
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "expiration": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sessionType": {
+          "$ref": "#/definitions/type"
+        }
+      }
+    },
+    "tag": {
+      "$ref": "#/definitions/type"
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "score"
+      ],
+      "properties": {
+        "scoreValue": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "reviewDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "name",
+        "owner"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "owner": {
+          "$ref": "#/definitions/user"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updateDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "cancelDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "order": {
+          "type": "number"
+        },
+        "review": {
+          "$ref": "#/definitions/review"
+        },
+        "related": {
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/definitions/task"
+            }
+          ]
+        }
+      }
+    },
+    "user": {
+      "type": "object",
+      "required": [
+        "curp",
+        "rfc",
+        "username",
+        "email"
+      ],
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "curp": {
+          "type": "string"
+        },
+        "rfc": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/address"
+        },
+        "genre": {
+          "type": "string",
+          "enum": [
+            "famale",
+            "male"
+          ]
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "nationalities": {
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/definitions/country"
+            }
+          ]
+        },
+        "projects": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "project": {
+                  "$ref": "#/definitions/project"
+                },
+                "ownershipType": {
+                  "$ref": "#/definitions/type"
+                }
+              }
+            }
+          ]
+        },
+        "sessions": {
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/definitions/session"
+            }
+          ]
+        }
+      }
+    },
+    "country": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "alpha2Code": {
+          "type": "string"
+        },
+        "alpha3Code": {
+          "type": "string"
+        },
+        "altSpellings": {
+          "type": "string"
+        },
+        "nativeName": {
+          "type": "string"
+        },
+        "numericCode": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "user": {
+      "$ref": "#/definitions/user"
+    },
+    "project": {
+      "$ref": "#/definitions/project"
+    }
+  }
+}
