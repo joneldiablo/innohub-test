@@ -30,10 +30,10 @@
   - La validación es un proceso que toma lugar en la etapa final de desarrollo de los productos,  n este proceso, el producto mismo es puesto a prueba por el equipo encargado de realizarlas. Con esto se asegura que el producto alcance el grado de funcionalidad deseado. Esta fase de pruebas podría estar dividida en varias más y al final se llega a la conclusión de si el producto puede lanzarse o no. Finalizando un módulo o proyecto se pasa al área pertinente o al cliente y este debe de dar su visto bueno del sistema/módulo teniendo de esta forma su validación.
 
 2. ¿Cómo aseguras que un código tiene suficiente cobertura de pruebas? 
-  - En lo personal creo que las pruebas exhaustivas se hacen cómo una ecuación diferencial "de izquierda a derecha", a lo que me refiero es introducir posibles valores por debajo de lo establecido y valores por encima de lo establecido, determinar puntos de "inflexón" y hacer pruebas en el punto, por debajo y por arriba, pensando de una forma númerica y extrapolar esta idea a cualquier tipo de entrada sea númerica, cadena de texto, buffer, arreglo, etc.. sin embargo al final en cada proyecto que he llevado en mi vida laboral, "te come el tiempo".
+  - En lo personal creo que las pruebas exhaustivas se hacen cómo una ecuación diferencial "de izquierda a derecha", a lo que me refiero es introducir posibles valores por debajo de lo establecido y valores por encima de lo establecido, determinar puntos de "inflexón" y hacer pruebas en el punto, por debajo y por arriba nuevamente, esto pensando de una forma muy númerica pero hay que extrapolar esta idea a cualquier tipo de entrada sea númerica, cadena de texto, buffer, arreglo, etc.. cabe mencionar que, al final, en cada proyecto que he llevado en mi vida laboral, "te come el tiempo" y haces las pruebas que ves necesarias "a ojo de buen cubero", con el tiempo este mecanismo se afina, se mejora...
 
 3. ¿Que es una prueba funcional? 
-  - El servicio de pruebas funcionales se centra en comprobar que los sistemas desarrollados funcionan acorde a las especificaciones funcionales y requisitos del cliente. Este servicio ayuda a su organización a detectar los posibles defectos derivados de errores en la fase de programación. Que el programa no truene con las entradas esperadas.
+  - El servicio de pruebas funcionales se centra en comprobar que los sistemas desarrollados funcionan acorde a las especificaciones funcionales y requisitos del cliente. Este servicio ayuda a su organización a detectar los posibles defectos derivados de errores en la fase de programación. En otras palabras, que el programa no "truene" con las entradas esperadas.
 
 4. ¿Cuál es la diferencia entre pruebas de integración y pruebas unitarias? 
   - Las pruebas unitarias corren sobre partes del código de forma independiente las pruebas de integración se hacen necesarias cuando queremos probar de una manera sistemica un proyecto como un todo.
@@ -49,7 +49,15 @@
   - `git reset --all` o tambien se puede hacer `git stash && git stash delete`
 
 8. Menciona un patrón de diseño que hayas utilizado y describe cómo ayudó en el proyecto 
-  - He utilizado, generadores yeoman, tanto para front como para backend, yo cree un generador de componentes llamado *generator-node-component* y se usa de la siguiente manera: `npm i yo generator-node-component -g && mkdir my-component && cd my-component && yo node-component`, los proyectos con .NET y visual studio tienen muy buenas *plantillas* para iniciar un proyecto con MVC o MVVC, tabajando con nodeJS y visual studio code (o peor aun con otros editores) es más libre el desarrollo, es muy importante definir un patrón de diseño.
+  - He utilizado, generadores yeoman, tanto para front como para backend, yo cree un generador de componentes llamado *generator-node-component* y se usa de la siguiente manera: 
+  
+  ```shell
+    npm i yo generator-node-component -g
+    mkdir my-component && cd my-component
+    yo node-component
+  ```
+
+  los proyectos con .NET y visual studio tienen muy buenas *plantillas* para iniciar un proyecto con MVC o MVVC, tabajando con nodeJS y visual studio code (o peor aun con otros editores) es más libre el desarrollo, es muy importante definir un patrón de diseño, un standard.
 
 9. ¿Cómo describes un antipatrón de diseño?
-  - Un antipatrón de diseño es un patrón de diseño que invariablemente conduce a una mala solución para un problema. Basándome en mi experiencia un antipatrón muy común ocurre cuando hay rotación de personal y no se docuemnta de forma adecuada o simplemente a los nuevos no les interesa mucho dar continuidad al trabajo realizado anteriormente y hacen como ellos saben; el tiempo y la presión son causas de una mala construcción, puede ocurrir que en principio se defina una buena estructura pero al ir avanzando y quedarse cortos de tiempo o viene un *OKR* donde no se le pregunta a nadie el tiempo real de implementación pues todo se termina haciendo al "ai'se va".
+  - Un antipatrón de diseño es un patrón de diseño que invariablemente conduce a una mala solución para un problema. Basándome en mi experiencia un antipatrón muy común ocurre cuando hay rotación de personal y no se docuemnta de forma adecuada o simplemente a los nuevos no les interesa mucho dar continuidad al trabajo realizado anteriormente y hacen como ellos saben; el tiempo y la presión son causas de una mala construcción también, puede ocurrir que en principio se defina una buena estructura pero al ir avanzando y quedarse cortos de tiempo o viene un *OKR* donde no se le pregunta a nadie el tiempo real de implementación pues todo se termina haciendo al "ai'se va".
